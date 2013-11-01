@@ -17,6 +17,14 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        public Form2(Person p)
+            :this()
+        {
+            this.textBox1.Text = p.FirstName;
+            this.textBox2.Text = p.LastName;
+            this.textBox3.Text = p.Age.ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -38,6 +46,14 @@ namespace WindowsFormsApplication1
         public int Age
         {
             get { return int.Parse(this.textBox3.Text); }
+        }
+
+        public bool CancelClicked { get; set; }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CancelClicked = true;
+            this.Close();
         }
     }
 }
