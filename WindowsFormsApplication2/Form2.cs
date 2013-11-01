@@ -17,7 +17,7 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             PlaceHolderTextBox textBox = new PlaceHolderTextBox();
             textBox.PlaceHolderText = "First Name";
-            textBox.PlaceHolderFont = new Font("Comic Sans MS", 8f, FontStyle.Italic | FontStyle.Underline);
+            textBox.PlaceHolderFont = new Font("Comic Sans MS", 8f, FontStyle.Italic);
             textBox.PlaceHolderColor = Color.Orange;
 
             textBox.Size = new Size(100, 30);

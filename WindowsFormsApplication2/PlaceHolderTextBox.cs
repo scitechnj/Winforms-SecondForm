@@ -13,11 +13,11 @@ namespace WindowsFormsApplication2
         private bool _isFirstFocus = true;
         private Font _previousFont;
         private Color _previousColor;
+
         public PlaceHolderTextBox()
         {
             this.GotFocus += PlaceHolderTextBox_GotFocus;
             this.LostFocus += PlaceHolderTextBox_LostFocus;
-            SetPlaceholder();
         }
 
         void PlaceHolderTextBox_LostFocus(object sender, EventArgs e)
@@ -27,14 +27,14 @@ namespace WindowsFormsApplication2
                 return;
             }
             _isFirstFocus = true;
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
             SetPlaceholder();
         }
 
+        protected override void InitLayout()
+        {
+            base.InitLayout();
+            SetPlaceholder();
+        }
 
         private void PlaceHolderTextBox_GotFocus(object sender, EventArgs e)
         {
